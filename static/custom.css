@@ -1,0 +1,262 @@
+/* WARNAV Military-Tech Theme for People Gallery */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap');
+
+:root {
+    --warnav-green: #00FF41; /* The primary color */
+    --warnav-dark-bg: #111111; /* Dark charcoal */
+    --warnav-darker-bg: #000000; /* Pure black */
+    --warnav-border: rgba(0, 255, 65, 0.3); /* Dimmed green border */
+    --warnav-text-light: #E0E0E0;
+    --warnav-text-dim: #A0A0A0;
+}
+
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--warnav-darker-bg);
+    color: var(--warnav-text-light);
+    scroll-behavior: smooth;
+}
+
+/* Headlines with military-tech font */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Background texture */
+.textured-background {
+    position: relative;
+}
+.textured-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300FF41' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h3v1H0V0zm0 3h2v1H0V3zm0 2h3v1H0V5zm4-5h2v1H4V0zm0 3h2v1H4V3z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Navigation overrides */
+.navbar {
+    background-color: var(--warnav-dark-bg) !important;
+    border-bottom: 2px solid var(--warnav-border);
+    box-shadow: 0 4px 20px rgba(0, 255, 65, 0.2);
+}
+
+.navbar-brand {
+    color: var(--warnav-green) !important;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+.nav-link {
+    color: var(--warnav-text-light) !important;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.nav-link:hover {
+    color: var(--warnav-green) !important;
+}
+
+.dropdown-menu {
+    background-color: var(--warnav-dark-bg);
+    border: 1px solid var(--warnav-border);
+    box-shadow: 0 8px 30px rgba(0, 255, 65, 0.2);
+}
+
+.dropdown-item {
+    color: var(--warnav-text-light);
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.dropdown-item:hover {
+    background-color: var(--warnav-green);
+    color: var(--warnav-darker-bg);
+}
+
+/* Header section */
+.bg-light {
+    background-color: var(--warnav-dark-bg) !important;
+    background-image: radial-gradient(at 50% 10%, #1a1a1a 0%, var(--warnav-dark-bg) 50%, var(--warnav-darker-bg) 100%);
+}
+
+.display-4 {
+    color: var(--warnav-green);
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+    letter-spacing: 0.05em;
+}
+
+.lead {
+    color: var(--warnav-text-light);
+    font-size: 1.1rem;
+}
+
+/* Cards styling */
+.card {
+    background-color: var(--warnav-dark-bg);
+    border: 1px solid var(--warnav-border);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 255, 65, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 255, 65, 0.2);
+    border-color: var(--warnav-green);
+}
+
+.card-title {
+    color: var(--warnav-green);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.025em;
+}
+
+.card-subtitle {
+    color: var(--warnav-text-dim) !important;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.card-text {
+    color: var(--warnav-text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Social links */
+.social-links a {
+    color: var(--warnav-green) !important;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: 1px solid var(--warnav-border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--warnav-green);
+    color: var(--warnav-darker-bg) !important;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Loading spinner */
+.spinner-border {
+    color: var(--warnav-green);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: var(--warnav-darker-bg) !important;
+    border-top: 2px solid var(--warnav-border);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300FF41' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 0h3v1H0V0zm0 3h2v1H0V3zm0 2h3v1H0V5zm4-5h2v1H4V0zm0 3h2v1H4V3z'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+footer * {
+    position: relative;
+    z-index: 1;
+}
+
+footer h5 {
+    color: var(--warnav-green);
+    margin-bottom: 0.75rem;
+}
+
+footer p {
+    color: var(--warnav-text-dim);
+}
+
+/* Container adjustments */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Utility classes */
+.text-warnav-green {
+    color: var(--warnav-green);
+}
+
+.bg-warnav-dark {
+    background-color: var(--warnav-dark-bg);
+}
+
+.bg-warnav-darker {
+    background-color: var(--warnav-darker-bg);
+}
+
+/* Button styles matching the theme */
+.btn-warnav-green {
+    background: var(--warnav-green);
+    color: #000000;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    border: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 255, 65, 0.4), 0 0 0 1px rgba(0, 255, 65, 0.5) inset;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+}
+
+.btn-warnav-green:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 255, 65, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    color: #000000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+}
