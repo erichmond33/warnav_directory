@@ -3,9 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Warnav | The Network for Ambitious Men</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="static/custom.css">
+
+    <style>
+        :root {
+            --warnav-green: #00FF41; /* The new primary color */
+            --warnav-dark-bg: #111111; /* Dark charcoal */
+            --warnav-darker-bg: #000000; /* Pure black */
+            --warnav-border: rgba(0, 255, 65, 0.3); /* Dimmed green border */
+            --warnav-text-light: #E0E0E0;
+            --warnav-text-dim: #A0A0A0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--warnav-darker-bg);
+            color: var(--warnav-text-light);
+            scroll-behavior: smooth;
+        }
+
+        /* --- New Headline Font --- */
+        h1, h2, h3, h4, h5, h6, .logo {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase; /* Classic military-tech feel */
+        }
+
+        /* --- Background Texture --- */
+        .textured-background {
+            position: relative;
+        }
+        .textured-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Re-colored the texture to the new green */
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300FF41' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h3v1H0V0zm0 3h2v1H0V3zm0 2h3v1H0V5zm4-5h2v1H4V0zm0 3h2v1H4V3z'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.15; /* Slightly more visible */
+            pointer-events: none; /* Ensure it doesn't block interaction */
+            z-index: 0;
+        }
+
+        /* --- Custom Gradients --- */
+        .hero-background {
+            background-color: var(--warnav-dark-bg);
+            background-image: radial-gradient(at 50% 10%, #1a1a1a 0%, var(--warnav-dark-bg) 50%, var(--warnav-darker-bg) 100%);
+        }
+
+        .bg-darker {
+            background-color: var(--warnav-darker-bg);
+        }
+
+        .bg-warnav-green-gradient {
+            /* New green gradient for the final CTA section */
+            background-image: linear-gradient(to right, var(--warnav-green), #00c030);
+        }
+
+        .btn-warnav-green:hover {
+            transform: translateY(-2px);
+            /* Brighter glow and a white inset border on hover */
+            box-shadow: 0 12px 25px rgba(0, 255, 65, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+            color: #000000; /* Keep text color on hover */
+        }
+
+        .btn-warnav-green-outline {
+            border: 2px solid var(--warnav-green);
+            color: var(--warnav-green);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-family: 'IBM Plex Mono', monospace; /* Match headline font */
+            text-transform: uppercase;
+        }
+
+        .btn-warnav-green-outline:hover {
+            background-color: var(--warnav-green);
+            color: var(--warnav-darker-bg);
+        }
+
+        /* --- Custom Components --- */
+        .video-placeholder {
+            border: 2px solid var(--warnav-green);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.4); /* Green glow */
+            border-radius: 0.75rem;
+        }
+
+        .play-button {
+            width: 6rem;
+            height: 6rem;
+            background-color: var(--warnav-green);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        .play-button:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-card,
+        .testimonial-card {
+            background-color: var(--warnav-dark-bg);
+            border: 1px solid var(--warnav-border); /* Dimmed green border */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .text-warnav-green {
+            color: var(--warnav-green);
+        }
+        
+        .fs-5 {
+            font-size: 1.2rem;
+        }
+
+        /* --- NEW: Step Flow Styles --- */
+        .step-item {
+            background-color: var(--warnav-dark-bg);
+            border: 1px solid var(--warnav-border);
+            border-radius: 9999px; /* Pill shape */
+            padding: 0.75rem 1.5rem;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+            flex-shrink: 0; /* Prevents shrinking in flex container */
+        }
+
+        .step-item .step-icon {
+            color: var(--warnav-green);
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        .step-item .step-title {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        .step-item .step-desc {
+            font-family: 'Inter', sans-serif;
+            color: var(--warnav-text-dim);
+            font-size: 0.9rem;
+            line-height: 1;
+        }
+
+        .step-arrow {
+            color: var(--warnav-border);
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
-<body>
-    <h1>Hello World</h1>
+<body class="textured-background">
+
+        <nav class="navbar navbar-expand-lg py-3">
+            <div class="container">
+            <a class="navbar-brand display-3 d-flex align-items-center" href="#">
+                <img src="static/warnav_logo.png" alt="Warnav Directory Logo" class="me-3" style="height: 40px;">
+                Warnav Directory
+            </a>
+            <div class="d-flex align-items-center" style="gap: 1rem;">
+                <!-- <a href="#apply" class="btn-warnav-green-outline d-none d-md-inline-block">
+                Login
+                </a> -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <a href="#apply" class="btn-warnav-green">
+                      Join The Elite Network <svg class="ms-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </nav>
+
+    <section class="hero-background position-relative overflow-hidden min-vh-100 d-flex align-items-center py-5">
+        
+        <div class="position-absolute top-0 start-0 w-100 h-100" 
+             style="z-index: 0; 
+                    opacity: 0.3; 
+                    mask-image: linear-gradient(to top, black 40%, transparent 100%);
+                    -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);">
+            
+            <svg class="position-absolute top-0 start-0 w-100 h-100" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 0 20 H 40 M 20 0 V 40" 
+                          fill="none" 
+                          stroke="rgba(0, 255, 65, 0.2)" 
+                          stroke-width="0.5">
+                    </path>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" 
+                  fill="url(#grid)" 
+                  transform="perspective(400px) rotateX(60deg) scale(4, 3)" 
+                  style="transform-origin: center top;">
+            </rect>
+            </svg>
+        </div>
+        <div class="container position-relative text-center" style="z-index: 2;">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-9">
+                    
+                    <h1 class="display-2 fw-bolder text-white mb-4">
+                        You Need<br><span class="text-warnav-green">Better Friends</span>
+                    </h1>
+                    
+                    <p class="fs-5 text-white-50 mx-auto mb-5" style="max-width: 800px;">
+                        The world is moving fast. Your network either propels you forward or holds you back. There is no neutral.
+                    </p>
+                    
+                    <a href="#apply" class="btn-warnav-green">
+                        Join The Elite Network <svg class="ms-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+
+                    <div class="row justify-content-center mt-5 pt-4">
+                        <div class="col-lg-11">
+                            <div class="video-placeholder position-relative">
+                                <img src="https://placehold.co/1200x600/000000/00FF41?text=Warnav+Dashboard+Preview" alt="Warnav Dashboard Preview" class="img-fluid" style="border-radius: 0.75rem;">
+                                
+                                <div class="position-absolute top-50 start-50 translate-middle">
+                                    <button class="play-button d-flex align-items-center justify-content-center border-0">
+                                        <svg class="text-dark" style="width: 2.5rem; height: 2.5rem; margin-left: 5px;" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                </div>
+                                
+                                <p class="position-absolute bottom-0 start-0 m-3 text-white-50">
+                                    <span class="text-warnav-green fw-bold">155,000+</span> subscribers strong.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mt-5 pb-4">
+                        <div class="col-lg-11 px-0">
+                            <div class="d-flex flex-column flex-xl-row align-items-center justify-content-between text-center text-lg-start">
+                                
+                                <div class="step-item d-flex align-items-center mb-3 mb-lg-0">
+                                    <svg class="step-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    <div class="ms-3">
+                                        <span class="step-title d-block">VETTED PEERS</span>
+                                        <span class="step-desc d-block">World-Class Network</span>
+                                    </div>
+                                </div>
+
+                                <svg class="step-arrow d-none d-lg-block mx-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+
+                                <div class="step-item d-flex align-items-center mb-3 mb-lg-0">
+                                    <svg class="step-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                                    <div class="ms-3">
+                                        <span class="step-title d-block">DIRECT ACCESS</span>
+                                        <span class="step-desc d-block">Scale Your Impact</span>
+                                    </div>
+                                </div>
+
+                                <svg class="step-arrow d-none d-lg-block mx-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+
+                                <div class="step-item d-flex align-items-center">
+                                    <svg class="step-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                                    <div class="ms-3">
+                                        <span class="step-title d-block">PROVEN OPERATORS</span>
+                                        <span class="step-desc d-block">Advice That Works</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 textured-background" style="background-color: var(--warnav-dark-bg);">
+        <div class="container py-md-5">
+            <h2 class="display-4 fw-bolder text-white text-center mb-5 pb-3">
+                Hear From The <span class="text-warnav-green">Impact Makers</span>
+            </h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card p-4 p-lg-5 h-100">
+                        <p class="fs-5 fst-italic text-white mb-4">
+                            "Warnav isn't just a directory; it's a force multiplier. I found a strategic partner who pushed my business further in months than I could have in years."
+                        </p>
+                        <p class="fs-6 fw-bold text-white-50 mb-0">- Alex T., SaaS Founder</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card p-4 p-lg-5 h-100">
+                        <p class="fs-5 fst-italic text-white mb-4">
+                            "The quality of connections here is unmatched. It's refreshing to network with men who truly embody the 'You vs You' philosophy. Highly recommend."
+                        </p>
+                        <p class="fs-6 fw-bold text-white-50 mb-0">- Ben C., Real Estate Investor</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card p-4 p-lg-5 h-100">
+                        <p class="fs-5 fst-italic text-white mb-4">
+                            "If you're serious about growth, both personal and professional, Warnav is essential. It's built for those who understand the value of an authentic, powerful network."
+                        </p>
+                        <p class="fs-6 fw-bold text-white-50 mb-0">- Chris D., Digital Marketing CEO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="py-5 bg-warnav-green-gradient textured-background">
+        <div class="container py-md-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <h2 class="display-3 fw-bolder text-dark mb-4">
+                        Ready to Join The Ranks?
+                    </h2>
+                    <p class="fs-5 text-dark mx-auto mb-5" style="max-width: 700px; opacity: 0.9;">
+                        The future belongs to those who build it. Stop waiting, start connecting.
+                        Your next breakthrough is a conversation away.
+                    </p>
+                    <a href="#" class="btn btn-dark fw-bold" style="padding: 1rem 3rem; font-size: 1.1rem; border-radius: 0.5rem; text-transform: uppercase;">
+                        Request Your Exclusive Access
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darker py-5">
+        <div class="container text-center">
+            <p class="text-white-50 mb-2">
+                &copy; 2025 Warnav.com &mdash; A Product of "You vs You" Newsletter. All Rights Reserved.
+            </p>
+            <div class="d-flex justify-content-center" style="gap: 1.5rem;">
+                <a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a>
+                <span class="text-white-50">|</span>
+                <a href="#" class="text-white-50 text-decoration-none">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
