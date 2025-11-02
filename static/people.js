@@ -94,34 +94,34 @@ document.addEventListener('DOMContentLoaded', async function() {
         templateCard.parentElement.remove();
         
         // Add Warnav Community card as 4th element if not already added
-        if (!document.getElementById('warnav-community-card')) {
-            const warnavCard = document.createElement('div');
-            warnavCard.className = 'col-lg-4 col-md-6';
-            warnavCard.id = 'warnav-community-card';
-            warnavCard.innerHTML = `
-                <div class="card h-100 shadow">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Join The Warnav Community</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Make Money & Connect</h6>
-                        <p class="card-text flex-grow-1">Learn strategies to make money while joining a community for networking and growth.</p>
-                        <div class="mt-auto">
-                            <div class="social-links">
-                                <a href="https://app.warnav.com" class="btn btn-secondary" title="Join Now">Ad</a>
-                                <a href="https://app.warnav.com" class="btn" title="Join Now">Join Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
+        // if (!document.getElementById('warnav-community-card')) {
+        //     const warnavCard = document.createElement('div');
+        //     warnavCard.className = 'col-lg-4 col-md-6';
+        //     warnavCard.id = 'warnav-community-card';
+        //     warnavCard.innerHTML = `
+        //         <div class="card h-100 shadow">
+        //             <div class="card-body d-flex flex-column">
+        //                 <h5 class="card-title">Join The Warnav Community</h5>
+        //                 <h6 class="card-subtitle mb-2 text-muted">Make Money & Connect</h6>
+        //                 <p class="card-text flex-grow-1">Learn strategies to make money while joining a community for networking and growth.</p>
+        //                 <div class="mt-auto">
+        //                     <div class="social-links">
+        //                         <a href="https://app.warnav.com" class="btn btn-secondary" title="Join Now">Ad</a>
+        //                         <a href="https://app.warnav.com" class="btn" title="Join Now">Join Now</a>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     `;
             
-            // Insert at 4th position
-            const allCards = peopleContainer.children;
-            if (allCards.length >= 3) {
-                peopleContainer.insertBefore(warnavCard, allCards[3]);
-            } else {
-                peopleContainer.appendChild(warnavCard);
-            }
-        }
+        //     // Insert at 4th position
+        //     const allCards = peopleContainer.children;
+        //     if (allCards.length >= 3) {
+        //         peopleContainer.insertBefore(warnavCard, allCards[3]);
+        //     } else {
+        //         peopleContainer.appendChild(warnavCard);
+        //     }
+        // }
         
         // Initialize sorting functionality after people are loaded
         initializeSorting();

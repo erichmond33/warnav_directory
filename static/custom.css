@@ -50,9 +50,19 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     box-shadow: 0 4px 20px rgba(0, 255, 65, 0.2);
 }
 
+.navbar-toggler {
+    background-color: var(--warnav-dark-bg) !important;
+    border: 1px solid white;
+    /* border-radius: 9999px !important; */
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
 .navbar-brand {
     color: var(--warnav-green) !important;
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     letter-spacing: 0.1em;
 }
 
@@ -219,8 +229,58 @@ footer p {
 
 .btn-warnav-green:hover {
     transform: translateY(-2px);
+    /* Brighter glow and a white inset border on hover */
     box-shadow: 0 12px 25px rgba(0, 255, 65, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
-    color: #000000;
+    color: #000000; /* Keep text color on hover */
+}
+
+.btn-warnav-green {
+    background-color: var(--warnav-green);
+    color: var(--warnav-darker-bg);
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 999px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    border: 2px solid var(--warnav-green);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 255, 65, 0.3);
+}
+
+.btn-warnav-green:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 65, 0.4);
+    color: var(--warnav-darker-bg);
+}
+
+.btn-warnav-green-outline {
+    border: 2px solid var(--warnav-green);
+    color: var(--warnav-green);
+    background-color: transparent;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 999px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 255, 65, 0.1);
+}
+
+.btn-warnav-green-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 65, 0.3);
 }
 
 /* Responsive adjustments */
