@@ -619,32 +619,40 @@
             const videoOverlay = document.getElementById('videoOverlay');
 
             if (video && videoContainer && customPlayBtn && videoOverlay) {
-                // Handle custom play button click
-                customPlayBtn.addEventListener('click', function(e) {
-                    e.stopPropagation(); // Prevent double-triggering
-                    playVideo();
-                });
-
-                // Handle video container click (anywhere in the video frame)
-                videoContainer.addEventListener('click', function(e) {
-                    if (!videoContainer.classList.contains('playing')) {
-                        playVideo();
+                // Unified toggle for play/pause to support mobile taps
+                function togglePlayPause() {
+                    if (video.paused || video.ended) {
+                        // attempt to play; ignore promise rejection to avoid uncaught errors on some browsers
+                        video.play().catch(()=>{});
+                        videoContainer.classList.add('playing');
+                        // show native controls when playing (helps mobile users pause/resume)
+                        video.setAttribute('controls', 'true');
+                    } else {
+                        video.pause();
+                        videoContainer.classList.remove('playing');
+                        // keep controls visible after pause so users can tap to resume/seek
+                        video.setAttribute('controls', 'true');
                     }
-                });
-
-                // Handle video element click directly (backup)
-                video.addEventListener('click', function(e) {
-                    if (!videoContainer.classList.contains('playing')) {
-                        e.preventDefault(); // Prevent default video behavior
-                        playVideo();
-                    }
-                });
-
-                // Function to handle video play
-                function playVideo() {
-                    video.play();
-                    videoContainer.classList.add('playing');
                 }
+
+                // Use pointerup which covers mouse and touch without double-firing click handlers
+                customPlayBtn.addEventListener('pointerup', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    togglePlayPause();
+                });
+
+                // Handle video container pointerup (anywhere in the video frame)
+                videoContainer.addEventListener('pointerup', function(e) {
+                    // ignore interactions that come from links/buttons inside the container
+                    if (e.target && (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a,button'))) return;
+                    togglePlayPause();
+                });
+
+                // Handle video element pointerup directly (backup)
+                video.addEventListener('pointerup', function(e) {
+                    togglePlayPause();
+                });
 
                 // Handle video play event
                 video.addEventListener('play', function() {
@@ -655,6 +663,8 @@
                 // Handle video pause event
                 video.addEventListener('pause', function() {
                     videoContainer.classList.remove('playing');
+                    // keep controls visible after pause
+                    video.setAttribute('controls', 'true');
                 });
 
                 // Handle video ended event
@@ -663,7 +673,7 @@
                     video.removeAttribute('controls');
                 });
 
-                // Prevent video controls from showing initially
+                // Prevent video native controls from showing initially
                 video.removeAttribute('controls');
             }
         });
