@@ -61,17 +61,29 @@ document.addEventListener('DOMContentLoaded', async function() {
             const linksContainer = personCard.querySelector('#links');
             linksContainer.innerHTML = ''; // Clear existing links
             
-            // Add custom links
+            // Add custom links with specific ordering
             if (person.links && person.links.length > 0) {
-                person.links.forEach(link => {
+                // Sort links to prioritize personal, then insta, then linkedin, then others
+                const sortedLinks = [...person.links].sort((a, b) => {
+                    const getOrder = (link) => {
+                        const label = link.label.toLowerCase();
+                        if (label === 'personal') return 1;
+                        if (label === 'insta' || label === 'instagram') return 2;
+                        if (label === 'linkedin') return 3;
+                        return 4;
+                    };
+                    return getOrder(a) - getOrder(b);
+                });
+
+                sortedLinks.forEach(link => {
                     const linkElement = document.createElement('a');
                     linkElement.href = link.url;
-                    linkElement.className = 'text-primary me-3';
+                    linkElement.className = 'text-primary';
                     linkElement.title = link.label;
-                    if (link.label !== "personal") {
+                    if (link.label.toLowerCase() !== "personal") {
                         linkElement.textContent = link.label;
                     } else {
-                        const displayUrl = link.url.replace(/^https?:\/\//i, '');
+                        const displayUrl = link.url.replace(/^https?:\/\//i, '').replace(/^www\./i, '').replace(/\/$/, '');
                         linkElement.textContent = displayUrl;
                     }
                     linkElement.target = '_blank'; // Open in new tab

@@ -149,6 +149,12 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-size: 0.95rem;
 }
 
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
 /* Social links */
 .social-links a {
     color: var(--warnav-green) !important;
@@ -161,6 +167,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .social-links a:hover {
