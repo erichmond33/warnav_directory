@@ -28,142 +28,58 @@
         ]
     },
     {
-        "id": 4,
-        "first_name": "Bob",
-        "last_name": "Smith",
-        "email": "bob.smith@example.com",
-        "position": "Data Analyst",
-        "description": "Skilled in data visualization and statistical analysis",
-        "links": [
-            {
-                "url": "https://github.com/bobsmith",
-                "label": "GitHub"
-            }
-        ]
-    },
-    {
         "id": 3,
-        "first_name": "Alice",
-        "last_name": "Johnson",
-        "email": "alice.johnson@example.com",
-        "position": "Product Manager",
-        "description": "Experienced in agile methodologies and user experience design",
+        "first_name": "Fared",
+        "last_name": "Farag",
+        "email": "fareedayman03@gmail.com",
+        "position": "Machine Learning Engineer",
+        "description": null,
         "links": [
             {
-                "url": "https://linkedin.com/in/alicejohnson",
+                "url": "https://www.linkedin.com/in/fared-farag/",
                 "label": "LinkedIn"
             }
         ]
     },
     {
-        "id": 5,
-        "first_name": "Carol",
-        "last_name": "Williams",
-        "email": "carol.williams@example.com",
-        "position": "UX Designer",
-        "description": "Passionate about creating intuitive user interfaces",
+        "id": 4,
+        "first_name": "Tyler",
+        "last_name": "Privett",
+        "email": "typrivett29@gmail.com",
+        "position": "Wildlife Biologist (Vertebrates)",
+        "description": null,
         "links": [
             {
-                "url": "https://dribbble.com/carolwilliams",
-                "label": "Dribbble"
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "first_name": "David",
-        "last_name": "Brown",
-        "email": "david.brown@example.com",
-        "position": "DevOps Engineer",
-        "description": "Expert in cloud infrastructure and automation",
-        "links": [
-            {
-                "url": "https://twitter.com/davidbrown",
-                "label": "Twitter"
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "first_name": "Eva",
-        "last_name": "Davis",
-        "email": "eva.davis@example.com",
-        "position": "Marketing Specialist",
-        "description": "Focused on digital marketing and brand strategy",
-        "links": [
-            {
-                "url": "https://instagram.com/evadavis",
+                "url": "https://www.instagram.com/tylerprivett/",
                 "label": "Instagram"
             }
         ]
     },
     {
-        "id": 8,
-        "first_name": "Frank",
-        "last_name": "Miller",
-        "email": "frank.miller@example.com",
-        "position": "Full Stack Developer",
-        "description": "Versatile coder with expertise in multiple frameworks",
+        "id": 5,
+        "first_name": "AJ",
+        "last_name": "Reyes",
+        "email": "Armandoreyes301@gmail.com",
+        "position": "CEO",
+        "description": null,
         "links": [
             {
-                "url": "https://stackoverflow.com/users/frankmiller",
-                "label": "Stack Overflow"
+                "url": "https://www.instagram.com/theajreyes_/",
+                "label": "Instagram"
             }
         ]
     },
     {
-        "id": 9,
-        "first_name": "Grace",
-        "last_name": "Wilson",
-        "email": "grace.wilson@example.com",
-        "position": "HR Manager",
-        "description": "Dedicated to talent acquisition and employee development",
+        "id": 6,
+        "first_name": "Ethan",
+        "last_name": "Willis",
+        "email": "EZANEWILLIS@GMAIL.COM",
+        "position": "Pool Technician",
+        "description": null,
         "links": [
             {
-                "url": "https://linkedin.com/in/gracewilson",
-                "label": "LinkedIn"
-            }
-        ]
-    },
-    {
-        "id": 10,
-        "first_name": "Henry",
-        "last_name": "Moore",
-        "email": "henry.moore@example.com",
-        "position": "Security Analyst",
-        "description": "Specializing in cybersecurity and threat detection",
-        "links": [
-            {
-                "url": "https://github.com/henrymoore",
-                "label": "GitHub"
-            }
-        ]
-    },
-    {
-        "id": 11,
-        "first_name": "Ivy",
-        "last_name": "Taylor",
-        "email": "ivy.taylor@example.com",
-        "position": "Graphic Designer",
-        "description": "Creative professional with a flair for visual storytelling",
-        "links": [
-            {
-                "url": "https://behance.net/ivytaylor",
-                "label": "Behance"
-            }
-        ]
-    },
-    {
-        "id": 12,
-        "first_name": "Jack",
-        "last_name": "Anderson",
-        "email": "jack.anderson@example.com",
-        "position": "Project Manager",
-        "description": "Ensures project success through effective planning and communication",
-        "links": [
-            {
-                "url": "https://linkedin.com/in/jackanderson",
-                "label": "LinkedIn"
+                "url": "https://www.instagram.com/ethan.willis.85/",
+                "label": "Instagram"
             }
         ]
     }
