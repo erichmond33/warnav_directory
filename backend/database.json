@@ -5,11 +5,15 @@
         "last_name": "Richmond",
         "email": "eerichmond33@gmail.com",
         "position": "Software Engineer",
-        "description": "Backend developer specializing in data systems",
+        "description": "",
         "links": [
             {
                 "url": "https://elir.net",
                 "label": "personal"
+            },
+            {
+                "url": "https://www.instagram.com/eerichmond33/",
+                "label": "Instagram"
             }
         ]
     },
@@ -19,7 +23,7 @@
         "last_name": "Gallion",
         "email": "ethan.gallion@yahoo.com",
         "position": "CEO",
-        "description": "Blah",
+        "description": "",
         "links": [
             {
                 "url": "https://www.instagram.com/ethangallionfhd/",
@@ -33,7 +37,7 @@
         "last_name": "Farag",
         "email": "fareedayman03@gmail.com",
         "position": "Machine Learning Engineer",
-        "description": null,
+        "description": "",
         "links": [
             {
                 "url": "https://www.linkedin.com/in/fared-farag/",
@@ -47,7 +51,7 @@
         "last_name": "Privett",
         "email": "typrivett29@gmail.com",
         "position": "Wildlife Biologist (Vertebrates)",
-        "description": null,
+        "description": "",
         "links": [
             {
                 "url": "https://www.instagram.com/tylerprivett/",
@@ -61,8 +65,12 @@
         "last_name": "Reyes",
         "email": "Armandoreyes301@gmail.com",
         "position": "CEO",
-        "description": null,
+        "description": "",
         "links": [
+            {
+                "url": "https://deltatimepiecesllc.com/",
+                "label": "Personal"
+            },
             {
                 "url": "https://www.instagram.com/theajreyes_/",
                 "label": "Instagram"
@@ -75,10 +83,60 @@
         "last_name": "Willis",
         "email": "EZANEWILLIS@GMAIL.COM",
         "position": "Pool Technician",
-        "description": null,
+        "description": "",
         "links": [
             {
                 "url": "https://www.instagram.com/ethan.willis.85/",
+                "label": "Instagram"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "first_name": "Bowen",
+        "last_name": "Naylor",
+        "email": "bowenmnaylor@gmail.com",
+        "position": "Personal Trainer & Nutrition Coach",
+        "description": null,
+        "links": [
+            {
+                "url": "https://www.instagram.com/bowen_naylor/",
+                "label": "Instagram"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "first_name": "Sabih",
+        "last_name": "Sarowar",
+        "email": "easyascake12@gmail.com",
+        "position": "CEO",
+        "description": null,
+        "links": [
+            {
+                "url": "https://www.linkedin.com/in/sabihsarowar/",
+                "label": "LinkedIn"
+            },
+            {
+                "url": "https://www.zapdospower.com/",
+                "label": "personal"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "first_name": "Ethan",
+        "last_name": "Richmond",
+        "email": "Micr0sc0ft.twitch@gmail.com",
+        "position": "Digital Marketing Specialist",
+        "description": null,
+        "links": [
+            {
+                "url": "https://ethanr.org/",
+                "label": "personal"
+            },
+            {
+                "url": "https://www.instagram.com/ethanr0101/",
                 "label": "Instagram"
             }
         ]
