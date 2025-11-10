@@ -140,5 +140,33 @@
                 "label": "Instagram"
             }
         ]
+    },
+    {
+        "id": 10,
+        "first_name": "Jack",
+        "last_name": "Leggett",
+        "email": "jackwleggett@gmail.com",
+        "position": "Forensic Anthropologist",
+        "description": null,
+        "links": [
+            {
+                "url": "https://www.instagram.com/jackleggett15/",
+                "label": "Instagram"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "first_name": "Travis",
+        "last_name": "Young",
+        "email": "06nkuckles2006@gmail.com",
+        "position": "Cloud Security Engineer",
+        "description": null,
+        "links": [
+            {
+                "url": "https://www.linkedin.com/in/travis-m-young-jr-aka-sleepy/",
+                "label": "LinkedIn"
+            }
+        ]
     }
 ]

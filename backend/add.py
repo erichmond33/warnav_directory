@@ -54,7 +54,17 @@ def add_links(person_id):
         url = input("Enter link URL (or just Enter to finish): ").strip()
         if not url:
             break
-        label = input("Enter link label (e.g. 'personal', 'GitHub', 'LinkedIn'): ").strip()
+        
+        # Auto-detect label based on URL
+        url_lower = url.lower()
+        if "instagram" in url_lower:
+            label = "Instagram"
+        elif "linkedin" in url_lower:
+            label = "LinkedIn"
+        elif "facebook" in url_lower:
+            label = "Facebook"
+        else:
+            label = input("Enter link label (e.g. 'personal', 'GitHub', 'LinkedIn'): ").strip()
 
         cursor.execute(
             "INSERT INTO links (person_id, url, label) VALUES (?, ?, ?)",
