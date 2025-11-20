@@ -168,5 +168,19 @@
                 "label": "LinkedIn"
             }
         ]
+    },
+    {
+        "id": 12,
+        "first_name": "Caio",
+        "last_name": "Cavarsan",
+        "email": "ferretcaio@gmail.com",
+        "position": "Medical Physicist",
+        "description": null,
+        "links": [
+            {
+                "url": "https://www.instagram.com/caio_cavarsan/",
+                "label": "Instagram"
+            }
+        ]
     }
 ]
