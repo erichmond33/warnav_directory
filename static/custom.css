@@ -162,6 +162,27 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* Social links */
 .social-links a {
+    color: var(--warnav-green) !important;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: 1px solid var(--warnav-border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.social-links a:hover {
+    background-color: var(--warnav-green);
+    color: var(--warnav-darker-bg) !important;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Mentor buttons */
+.mentor-button a {
     color: var(--warnav-darker-bg) !important;
     background-color: var(--warnav-green);
     font-family: 'IBM Plex Mono', monospace;
@@ -177,7 +198,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
 }
 
-.social-links a:hover {
+.mentor-button a:hover {
     background-color: var(--warnav-green);
     color: var(--warnav-darker-bg) !important;
     box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
