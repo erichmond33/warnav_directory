@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 `;
             } else {
                 readerBadge.classList.add('is-reader');
-                readerBadge.setAttribute('title', 'Not a You vs You Reader');
+                readerBadge.setAttribute('title', 'Cool person, but not a You vs You Reader');
                 // Vertical bar (Lieutenant rank) for non-readers - custom SVG (much larger bar)
                 readerBadge.innerHTML = `
                     <svg viewBox="0 0 10 14" fill="currentColor" style="width: 1rem; height: 1rem;">

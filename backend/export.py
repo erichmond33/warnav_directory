@@ -14,7 +14,6 @@ def export_to_json_with_sql(db_path: str, output_path: str):
             'id', p.id,
             'first_name', p.first_name,
             'last_name', p.last_name,
-            'email', p.email,
             'position', p.position,
             'description', p.description,
             'reader', p.reader,

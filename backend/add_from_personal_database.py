@@ -77,7 +77,11 @@ def copy_person(person_id):
         first_name = person['firstName'] or ""
         last_name = person['lastName'] or ""
         email = person['email'] or f"{first_name.lower()}.{last_name.lower()}@example.com"
-        description = person['description'] or ""
+        description = ""
+        
+        # Ask for job title/position
+        position = input("Enter position/job title (or press Enter to skip): ").strip()
+        position = position if position else None
         
         # Ask if they are a You vs You reader
         reader_input = input("Is this person a 'You vs You' reader? (y/n): ").strip().lower()
@@ -101,9 +105,9 @@ def copy_person(person_id):
             # Update existing person
             backend_cursor.execute(
                 """UPDATE people 
-                   SET first_name = ?, last_name = ?, description = ?, reader = ?
+                   SET first_name = ?, last_name = ?, position = ?, description = ?, reader = ?
                    WHERE id = ?""",
-                (first_name, last_name, description, reader, new_person_id)
+                (first_name, last_name, position, description, reader, new_person_id)
             )
             print(f"✅ Updated person with id {new_person_id}")
         else:
@@ -111,7 +115,7 @@ def copy_person(person_id):
             backend_cursor.execute(
                 """INSERT INTO people (first_name, last_name, email, position, description, reader)
                    VALUES (?, ?, ?, ?, ?, ?)""",
-                (first_name, last_name, email, None, description, reader)
+                (first_name, last_name, email, position, description, reader)
             )
             backend_conn.commit()
             new_person_id = backend_cursor.lastrowid
