@@ -6,6 +6,7 @@
         "email": "eerichmond33@gmail.com",
         "position": "Software Engineer",
         "description": "",
+        "reader": 1,
         "links": [
             {
                 "url": "https://elir.net",
@@ -24,6 +25,7 @@
         "email": "ethan.gallion@yahoo.com",
         "position": "CEO",
         "description": "",
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.instagram.com/ethangallionfhd/",
@@ -38,6 +40,7 @@
         "email": "fareedayman03@gmail.com",
         "position": "Machine Learning Engineer",
         "description": "",
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.linkedin.com/in/fared-farag/",
@@ -52,6 +55,7 @@
         "email": "typrivett29@gmail.com",
         "position": "Wildlife Biologist (Vertebrates)",
         "description": "",
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.instagram.com/tylerprivett/",
@@ -66,6 +70,7 @@
         "email": "Armandoreyes301@gmail.com",
         "position": "CEO",
         "description": "",
+        "reader": 0,
         "links": [
             {
                 "url": "https://deltatimepiecesllc.com/",
@@ -84,6 +89,7 @@
         "email": "EZANEWILLIS@GMAIL.COM",
         "position": "Pool Technician",
         "description": "",
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.instagram.com/ethan.willis.85/",
@@ -98,6 +104,7 @@
         "email": "bowenmnaylor@gmail.com",
         "position": "Personal Trainer & Nutrition Coach",
         "description": null,
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.instagram.com/bowen_naylor/",
@@ -112,6 +119,7 @@
         "email": "easyascake12@gmail.com",
         "position": "CEO",
         "description": null,
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.linkedin.com/in/sabihsarowar/",
@@ -130,6 +138,7 @@
         "email": "Micr0sc0ft.twitch@gmail.com",
         "position": "Digital Marketing Specialist",
         "description": null,
+        "reader": 0,
         "links": [
             {
                 "url": "https://ethanr.org/",
@@ -148,6 +157,7 @@
         "email": "jackwleggett@gmail.com",
         "position": "Forensic Anthropologist",
         "description": null,
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.instagram.com/jackleggett15/",
@@ -162,6 +172,7 @@
         "email": "06nkuckles2006@gmail.com",
         "position": "Cloud Security Engineer",
         "description": null,
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.linkedin.com/in/travis-m-young-jr-aka-sleepy/",
@@ -176,6 +187,7 @@
         "email": "ferretcaio@gmail.com",
         "position": "Medical Physicist",
         "description": null,
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.instagram.com/caio_cavarsan/",
@@ -190,6 +202,7 @@
         "email": "prestonnabors@outlook.com",
         "position": "Cloud Platform Engineer",
         "description": null,
+        "reader": 0,
         "links": [
             {
                 "url": "https://www.linkedin.com/in/preston-lane-nabors-475358246/",

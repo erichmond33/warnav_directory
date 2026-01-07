@@ -30,6 +30,10 @@ def add_person():
 
         new_data[field] = value if value else None
 
+    # Ask if they are a You vs You reader
+    reader_input = input("Is this person a 'You vs You' reader? (y/n): ").strip().lower()
+    new_data["reader"] = 1 if reader_input == 'y' else 0
+
     # Build SQL for person
     columns = ", ".join(new_data.keys())
     placeholders = ", ".join("?" for _ in new_data)

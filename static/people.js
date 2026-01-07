@@ -57,6 +57,29 @@ document.addEventListener('DOMContentLoaded', async function() {
             personCard.querySelector('#position').textContent = person.position;
             personCard.querySelector('#description').textContent = person.description;
             
+            // Update reader badge based on status with military rank symbols
+            const readerBadge = personCard.querySelector('#readerBadge');
+            
+            if (person.reader) {
+                readerBadge.classList.add('is-reader');
+                readerBadge.setAttribute('title', 'You vs You Reader');
+                // Sharp star (General rank) for readers - custom SVG (much larger star)
+                readerBadge.innerHTML = `
+                    <svg viewBox="0 0 14 14" fill="currentColor" style="width: 1rem; height: 1rem;">
+                        <path d="M7 0L9.09 4.26L14 5.27L10.5 8.64L11.18 13.52L7 11.27L2.82 13.52L3.5 8.64L0 5.27L4.91 4.26L7 0Z"/>
+                    </svg>
+                `;
+            } else {
+                readerBadge.classList.add('is-reader');
+                readerBadge.setAttribute('title', 'Not a You vs You Reader');
+                // Vertical bar (Lieutenant rank) for non-readers - custom SVG (much larger bar)
+                readerBadge.innerHTML = `
+                    <svg viewBox="0 0 10 14" fill="currentColor" style="width: 1rem; height: 1rem;">
+                        <rect x="2" y="0" width="6" height="14" rx="0.5"/>
+                    </svg>
+                `;
+            }
+            
             // Handle social links
             const linksContainer = personCard.querySelector('#links');
             linksContainer.innerHTML = ''; // Clear existing links
@@ -137,6 +160,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         // Initialize sorting functionality after people are loaded
         initializeSorting();
+
+        // Initialize Bootstrap tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
         // Hide spinner
         spinner.remove();

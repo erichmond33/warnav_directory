@@ -17,6 +17,7 @@ def export_to_json_with_sql(db_path: str, output_path: str):
             'email', p.email,
             'position', p.position,
             'description', p.description,
+            'reader', p.reader,
             'links', json_group_array(
                 json_object(
                     'url', l.url,

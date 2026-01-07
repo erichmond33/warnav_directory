@@ -138,6 +138,9 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     letter-spacing: 0.025em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .card-subtitle {
@@ -334,4 +337,51 @@ footer p {
         gap: 0.5rem;
         flex-wrap: wrap;
     }
+}
+
+/* Reader badge styling - Military rank theme */
+.reader-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 0.75rem;
+    padding: 0;
+    border-radius: 999px;
+    margin-left: auto;
+    transition: all 0.3s ease;
+    cursor: help;
+    vertical-align: middle;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.reader-badge.is-reader {
+    border: 1px solid var(--warnav-green);
+    color: var(--warnav-green);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.2);
+}
+
+.reader-badge.is-reader:hover {
+    background-color: var(--warnav-green);
+    color: var(--warnav-darker-bg);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+    transform: scale(1.05);
+}
+
+.reader-badge.not-reader {
+    border: 1px solid rgba(160, 160, 160, 0.3);
+    color: #666666;
+    opacity: 0.6;
+}
+
+.reader-badge.not-reader:hover {
+    opacity: 1;
+    border-color: rgba(160, 160, 160, 0.6);
+    color: #888888;
+}
+
+.reader-badge svg {
+    width: 1.5rem;
+    height: 1.5rem;
 }
